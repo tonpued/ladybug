@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet  author="Chaimongkol"  id="creattable-employee">
+		<createTable
+				remarks="namebug"
+				schemaName="keepbug"
+				tableName="namebug">
+			<column  name="id"  type="INT" autoIncrement="true">
+				<constraints primaryKey="true"></constraints>
+			</column>
+			<column  name="namebug"  type="VARCHAR(50)" >
+			</column>
+			<column  name="severity_id"  type="INT" >
+			</column>
+			<column  name="findername"  type="VARCHAR(100)">	
+			</column>
+			<column  name="status_id"  type="INT">
+			</column>
+			<column  name="start_date"  type="DATETIME">
+			</column>
+			<column  name="is_delete"  type="BOOLEAN" defaultValueBoolean="false">
+			</column>
+			
+		</createTable>
+
+		<addForeignKeyConstraint  
+			baseColumnNames="severity_id"
+            baseTableName="namebug"
+            constraintName="fk_severity_id"
+            referencedColumnNames="id"
+            referencedTableName="severity"/>
+		<addForeignKeyConstraint
+			baseColumnNames="status_id"
+            baseTableName="namebug"
+            constraintName="fk_status_id"
+            referencedColumnNames="id"
+            referencedTableName="status"/>
+	</changeSet>
+</databaseChangeLog>

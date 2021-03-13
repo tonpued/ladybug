@@ -1,0 +1,38 @@
+﻿version: '2.4'
+services:
+  local_regression:
+    container_name: 'local_regression'
+    build:
+      dockerfile: Dockerfile
+      context: .
+      args:
+        APP_ENV: LocalRegression
+    ports:
+      - "9190:8080"
+    depends_on:
+      postgres_local_regression:
+        condition: service_healthy
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+    links:
+      - postgres_local_regression:pgsql_regression
+    entrypoint:
+      - bash 
+      - ./run-dev.bash
+    network_mode: bridge
+
+  postgres_local_regression:
+    container_name: 'postgres_local_regression'
+    image: postgres
+    ports:
+      - "5190:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_HOST_AUTH_METHOD=trust
+      - POSTGRES_DB=keepbug
+    network_mode: bridge
+    healthcheck:
+        test: [ "CMD", "pg_isready", "-d", "keepbug", "-U", "postgres" ]
+        interval: 10s
+        timeout: 5s
+        retries: 5

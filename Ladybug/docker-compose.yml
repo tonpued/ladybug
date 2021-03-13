@@ -1,0 +1,17 @@
+﻿version: '2'
+services:
+  ladybug:
+    container_name: 'Ladybug'
+    build:
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - "8180:8080"
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+    external_links:
+      - postgres:postgres
+    entrypoint:
+      - bash 
+      - ./run-dev.bash
+    network_mode: bridge

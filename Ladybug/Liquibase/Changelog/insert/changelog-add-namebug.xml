@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<changeSet author="Chaimongkol" id="add-position">
+		<insert tableName="namebug" schemaName="keepbug">
+			<column name="namebug" value="หน้าต่างหลุด"/>
+			<column name="severity_id" value="1"/>
+			<column name="findername" value="เทส คนเจ้าปัญหา"/>
+			<column name="status_id" value="1"/>
+			<column name="start_date" value="2020-03-30 17:30"/>
+		</insert>
+		<insert tableName="namebug" schemaName="keepbug">
+			<column name="namebug" value="เบรคแตก"/>
+			<column name="severity_id" value="1"/>
+			<column name="findername" value="เทส คนหาเรื่อง"/>
+			<column name="status_id" value="2"/>
+			<column name="start_date" value="2020-03-16 09:30"/>
+		</insert>
+		<insert tableName="namebug" schemaName="keepbug">
+			<column name="namebug" value="หลุดโลก"/>
+			<column name="severity_id" value="1"/>
+			<column name="findername" value="เทส คนลอย"/>
+			<column name="status_id" value="2"/>
+			<column name="start_date" value="2020-03-06 19:30"/>
+		</insert>
+		<insert tableName="namebug" schemaName="keepbug">
+			<column name="namebug" value="เดินกลับหัว"/>
+			<column name="severity_id" value="2"/>
+			<column name="findername" value="เทส คนอ้วนแต่ผอม"/>
+			<column name="status_id" value="2"/>
+			<column name="start_date" value="2020-03-26 23:30"/>
+		</insert>
+	</changeSet>
+</databaseChangeLog>

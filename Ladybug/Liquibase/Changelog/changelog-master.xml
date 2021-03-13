@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+	<include file="Changelog/changelog-creattable-severity.xml" />
+	<include file="Changelog/changelog-creattable-status.xml" />
+	<include file="Changelog/changelog-creattable-namebug.xml" />
+	<include file="Changelog/insert/changelog-add-severity.xml" />
+	<include file="Changelog/insert/changelog-add-status.xml" />
+	<include file="Changelog/insert/changelog-add-namebug.xml" />
+	<include file="Changelog/healthcheck/changelog-creattable-healthcheck.xml" />
+	<include file="Changelog/healthcheck/changelog-add-healthcheck.xml" />
+	<include file="Changelog/healthcheck/changelog-delete-healthcheck.xml" />
+	<include file="Changelog/healthcheck/changelog-update-healthcheck.xml" />
+</databaseChangeLog>
