@@ -8,9 +8,13 @@
 	<include file="Changelog/changelog-creattable-severity.xml" />
 	<include file="Changelog/changelog-creattable-status.xml" />
 	<include file="Changelog/changelog-creattable-namebug.xml" />
+	<include file="Changelog/changelog-creattable-position.xml" />
+	<include file="Changelog/changelog-creattable-user.xml" />
 	<include file="Changelog/insert/changelog-add-severity.xml" />
 	<include file="Changelog/insert/changelog-add-status.xml" />
 	<include file="Changelog/insert/changelog-add-namebug.xml" />
+	<include file="Changelog/insert/changelog-add-position.xml" />
+	<include file="Changelog/insert/changelog-add-user.xml" />
 	<include file="Changelog/healthcheck/changelog-creattable-healthcheck.xml" />
 	<include file="Changelog/healthcheck/changelog-add-healthcheck.xml" />
 	<include file="Changelog/healthcheck/changelog-delete-healthcheck.xml" />

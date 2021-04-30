@@ -2,6 +2,7 @@
 using Ladybug.Models.NameBug;
 using Ladybug.Models.Severity;
 using Ladybug.Models.Status;
+using Ladybug.Models.User;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ladybug.Data
@@ -16,6 +17,6 @@ namespace Ladybug.Data
         public DbSet<NameBugModel> NameBug { get; set; }
         public DbSet<SeverityModels> Severity { get; set; }
         public DbSet<StatusModels> Status { get; set; }
-
+        public DbSet<UsersModels> User { get; set; }
     }
 }

@@ -2,6 +2,7 @@ using Ladybug.BesinessLogic;
 using Ladybug.Data;
 using Ladybug.Repository;
 using Ladybug.Repository.NameBug;
+using Ladybug.Repository.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -32,6 +33,7 @@ namespace Ladybug
             services.AddScoped<INameBugRepository, NameBugRepository>();
             services.AddScoped<ISeverityRepository, SeverityRepository>();
             services.AddScoped<IStatusRepository, StatusRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<NameBugBusinessLogic>();
         }
 

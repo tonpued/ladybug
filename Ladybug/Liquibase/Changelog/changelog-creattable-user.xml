@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet  author="Chaimongkol"  id="creattable-user">
+		<createTable
+				remarks="user"
+				schemaName="keepbug"
+				tableName="employee">
+			<column  name="id"  type="INT" autoIncrement="true">
+				<constraints primaryKey="true"></constraints>
+			</column>
+			<column  name="username"  type="VARCHAR(50)">
+			</column>
+			<column  name="password"  type="VARCHAR(50)">
+			</column>
+			<column  name="position_id"  type="INT">
+			</column>
+		</createTable>
+		
+		<addForeignKeyConstraint
+			baseColumnNames="position_id"
+            baseTableName="employee"
+            constraintName="fk_position_id"
+            referencedColumnNames="id"
+            referencedTableName="position"/>
+	</changeSet>
+</databaseChangeLog>
